@@ -2,7 +2,7 @@ package world.gregs.hestia.flood.login.game.codec.decode
 
 import io.netty.channel.ChannelHandlerContext
 import world.gregs.hestia.core.network.codec.message.MessageDecoder
-import world.gregs.hestia.core.network.codec.packet.Packet
+import world.gregs.hestia.core.network.packet.Packet
 import world.gregs.hestia.core.network.protocol.ClientOpcodes.LOGIN_DETAILS
 import world.gregs.hestia.flood.login.game.codec.decode.messages.GameLoginDetails
 

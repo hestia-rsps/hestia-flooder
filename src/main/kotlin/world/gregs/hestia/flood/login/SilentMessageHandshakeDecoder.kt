@@ -6,7 +6,7 @@ import world.gregs.hestia.core.network.codec.message.Message
 import world.gregs.hestia.core.network.codec.message.MessageDecoder
 import world.gregs.hestia.core.network.codec.message.MessageHandshake
 import world.gregs.hestia.core.network.codec.message.SimpleMessageHandshakeDecoder
-import world.gregs.hestia.core.network.codec.packet.Packet
+import world.gregs.hestia.core.network.packet.Packet
 
 class SilentMessageHandshakeDecoder(codec: HandshakeCodec, handshake: MessageHandshake) : SimpleMessageHandshakeDecoder(codec, handshake) {
 

@@ -17,6 +17,8 @@ class GameLoginDetailsHandler(private val codec: Codec) : MessageHandler<GameLog
         val (rights, index, name) = message
         val client = ctx.channel().attr(KEY).get()
 
+        println("$client ${client.decrypt}")
+
         ctx.pipeline().apply {
             //Update packet with isaac dummy
             replace("packet", "packet", DummyIsaacPacketDecoder(client.decrypt))

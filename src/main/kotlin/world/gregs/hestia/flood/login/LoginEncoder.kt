@@ -2,8 +2,8 @@ package world.gregs.hestia.flood.login
 
 import io.netty.buffer.ByteBuf
 import io.netty.buffer.Unpooled
-import world.gregs.hestia.core.cache.crypto.Rsa
-import world.gregs.hestia.core.network.codec.packet.PacketWriter
+import world.gregs.hestia.cache.crypto.Rsa
+import world.gregs.hestia.core.network.packet.PacketWriter
 import world.gregs.hestia.flood.Flooder.Companion.RSA_MODULUS
 import world.gregs.hestia.flood.Flooder.Companion.RSA_PUBLIC
 

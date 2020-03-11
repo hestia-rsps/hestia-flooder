@@ -7,6 +7,9 @@ version '0.1'
 
 repositories {
     mavenCentral()
+    maven {
+        url "https://dl.bintray.com/hestia-rsps/Hestia"
+    }
 }
 
 apply from: 'dependencies.gradle'

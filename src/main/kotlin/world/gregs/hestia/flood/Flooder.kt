@@ -13,10 +13,7 @@ import world.gregs.hestia.core.network.codec.message.SimpleMessageHandler
 import world.gregs.hestia.core.network.pipe.Pipeline
 import world.gregs.hestia.flood.Client.Companion.KEY
 import world.gregs.hestia.flood.login.SilentMessageHandshakeDecoder
-import world.gregs.hestia.flood.login.game.GameCodec
-import world.gregs.hestia.flood.login.game.GameConnection
-import world.gregs.hestia.flood.login.game.GameHandlers
-import world.gregs.hestia.flood.login.game.GameHandshake
+import world.gregs.hestia.flood.login.game.*
 import world.gregs.hestia.flood.login.lobby.LobbyCodec
 import world.gregs.hestia.flood.login.lobby.LobbyConnection
 import world.gregs.hestia.flood.login.lobby.LobbyHandlers
@@ -64,10 +61,11 @@ class Flooder {
 
         @JvmStatic
         fun main(args: Array<String>) {
-            Settings.load()
+            Settings.load("./settings.yaml")
             RSA_MODULUS = BigInteger(Settings.getString("rsaModulus"), 16)
             RSA_PUBLIC = BigInteger(Settings.getString("rsaPublic"), 16)
-            Flooder().create(2000)//The number of clients to make
+            Opcodes
+            Flooder().create(1000)//The number of clients to make
         }
 
         /**

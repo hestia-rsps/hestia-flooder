@@ -1,11 +1,11 @@
 package world.gregs.hestia.flood.login.game.codec.encode
 
 import world.gregs.hestia.core.network.codec.message.MessageEncoder
-import world.gregs.hestia.core.network.codec.packet.Endian
-import world.gregs.hestia.core.network.codec.packet.Modifier
-import world.gregs.hestia.core.network.codec.packet.PacketBuilder
+import world.gregs.hestia.core.network.packet.PacketBuilder
 import world.gregs.hestia.core.network.protocol.ClientOpcodes.WALK
 import world.gregs.hestia.flood.login.game.codec.encode.messages.WalkMap
+import world.gregs.hestia.io.Endian
+import world.gregs.hestia.io.Modifier
 
 class WalkMapEncoder : MessageEncoder<WalkMap>() {
 

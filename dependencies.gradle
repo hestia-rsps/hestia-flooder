@@ -20,6 +20,8 @@ ext {
             kotlinJdk: "org.jetbrains.kotlin:kotlin-stdlib-jdk8",
             netty: "io.netty:netty-all:$netty_version",
             yaml: "org.yaml:snakeyaml:$yaml_version",
+            core: "world.gregs.hestia:hestia-server-core:0.4.11",
+            cache: "world.gregs.hestia:hestia-cache-store:0.1.2",
     ]
     
     systemDependencies = [
