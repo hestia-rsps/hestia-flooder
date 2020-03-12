@@ -3,6 +3,7 @@ package world.gregs.hestia.flood.login.game.handle
 import io.netty.channel.ChannelHandlerContext
 import world.gregs.hestia.core.network.codec.message.MessageHandler
 import world.gregs.hestia.flood.Client
+import world.gregs.hestia.flood.Flooder
 import world.gregs.hestia.flood.login.game.codec.decode.messages.MapRegion
 
 class MapRegionHandler : MessageHandler<MapRegion> {
@@ -12,6 +13,7 @@ class MapRegionHandler : MessageHandler<MapRegion> {
         if(client.position == -1) {
             client.position = message.position
             client.start()
+            Flooder.clients.add(client)
         }
     }
 

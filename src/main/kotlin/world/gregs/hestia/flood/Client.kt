@@ -2,7 +2,7 @@ package world.gregs.hestia.flood
 
 import io.netty.channel.Channel
 import io.netty.util.AttributeKey
-import world.gregs.hestia.core.cache.crypto.Isaac
+import world.gregs.hestia.cache.crypto.Isaac
 import world.gregs.hestia.core.network.codec.message.Message
 import world.gregs.hestia.flood.behaviours.*
 import world.gregs.hestia.flood.login.game.codec.encode.messages.WalkMap
@@ -24,7 +24,7 @@ data class Client(val name: String, val password: String, var lobby: Channel?) {
     val y
         get() = position and 0x3fff
 
-    private var behaviour = behaviours.last()//behaviours.random() TODO TEMP
+    private var behaviour = Sleepy()//.last()//behaviours.random() TODO TEMP
 
     fun generateIsaacKeys(): IntArray {
         //Generate
@@ -51,6 +51,10 @@ data class Client(val name: String, val password: String, var lobby: Channel?) {
 
     fun start() {
         behaviour.begin(this)
+    }
+
+    fun tick() {
+        behaviour.tick(this)
     }
 
     fun step(deltaX: Int, deltaY: Int) {

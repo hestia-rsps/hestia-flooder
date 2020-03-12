@@ -2,6 +2,7 @@ package world.gregs.hestia.flood.behaviours
 
 import world.gregs.hestia.flood.Behaviour
 import world.gregs.hestia.flood.Client
+import kotlin.random.Random
 
 /**
  * Doesn't do anything
@@ -9,11 +10,18 @@ import world.gregs.hestia.flood.Client
 class Sleepy : Behaviour {
 
     override fun begin(client: Client) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        client.step(range.random(), range.random())
     }
 
     override fun tick(client: Client) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        if(Random.nextDouble() < 0.25) {
+            client.step(range.random(), range.random())
+        }
+    }
+
+
+    companion object {
+        val range = -22 .. 22
     }
 
 }

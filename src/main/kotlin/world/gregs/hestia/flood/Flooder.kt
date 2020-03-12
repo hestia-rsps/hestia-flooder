@@ -1,6 +1,8 @@
 package world.gregs.hestia.flood
 
+import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import world.gregs.hestia.core.Settings
 import world.gregs.hestia.core.network.NetworkConstants.LOCALHOST
@@ -28,6 +30,14 @@ class Flooder {
     private val game = setupGame()
 
     fun create(count: Int) {
+        GlobalScope.launch {
+            while(true) {
+                delay(600)
+                clients.forEach {
+                    it.tick()
+                }
+            }
+        }
         runBlocking {
             repeat(count) {
                 lobby.connect(LOBBY_ADDRESS, LOBBY_PORT)
